@@ -5,8 +5,6 @@ Gpt Notify sends ntfy push notifications to your iPhone and Windows laptop when 
 ## What sends a notification
 
 - **Required information:** Codex's `Stop` event sends a notification when its final message clearly says it needs your answer to continue. Successful completions and ordinary follow-up offers stay quiet. Detection uses text patterns, so vague requests may be missed.
-- **Approvals:** Approval notifications are disabled. Codex may still show its normal approval prompt, but Gpt Notify will not send an approval push, including when automatic approval is enabled.
-
 These are local Codex hooks. They do not run in ordinary ChatGPT chats or remote/cloud Codex sessions. The computer must be awake and connected when the hook runs; the phone must have internet access and ntfy notifications enabled.
 
 ## Requirements
@@ -25,7 +23,7 @@ npm install --global codex-gpt-notify
 codex-gpt-notify setup
 ```
 
-`setup` creates a random ntfy topic if one does not already exist, copies the handler to a stable location, and registers one global `Stop` hook. It removes Gpt Notify's old approval hook and preserves unrelated hooks already in your Codex hooks file. You can run setup again after moving to a new computer or cloning the source; it reuses the existing topic on that Windows account.
+`setup` creates a random ntfy topic if one does not already exist, copies the handler to a stable location, and registers one global `Stop` hook. It removes Gpt Notify's outdated hook and preserves unrelated hooks already in your Codex hooks file. You can run setup again after moving to a new computer or cloning the source; it reuses the existing topic on that Windows account.
 
 To try the package before its first npm release, clone this repository, open PowerShell in the repository root, and run:
 
@@ -83,7 +81,6 @@ Then ask one clear question about the specific information you need, and wait fo
 
 Use this only when my answer is required. Don’t use it for optional preferences, successful task completions, or routine follow-up offers.
 
-When an action needs Codex’s permission, make the tool request normally and let Codex show its approval prompt. Don’t replace the approval prompt with a text question. Gpt Notify does not send approval notifications.
 ```
 
 This helps the stop-message filter recognize required information. These instructions only affect local Codex notifications when used with this hook setup.
@@ -123,8 +120,6 @@ Start a fresh local Codex session in any project after the hooks are trusted.
 
 1. **Required information:** prompt Codex: `For a notification test, tell me: “I need your input before I can continue. Which color should I choose, red or blue?” Then stop and wait.` You should receive a notification with the question.
 2. **Successful completion:** prompt Codex: `Reply only with “Test complete.”` You should not receive a notification.
-3. **Approval behavior:** trigger or wait for an approval prompt. Codex may display it, but Gpt Notify should send no notification for it.
-
 ## Troubleshooting
 
 - **`/hooks` reports a JSON parse error at line 1, column 1:** rerun setup. It writes the global hooks file as UTF-8 without a byte-order mark.
