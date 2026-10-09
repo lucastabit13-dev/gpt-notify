@@ -135,4 +135,4 @@ Start a fresh local Codex session in any project after the hooks are trusted.
 
 ## GitHub
 
-The repository contains the handler, installer, and these setup instructions. Before publishing, verify that no private ntfy topic or personal config file is committed. The topic and installed handler live under `%APPDATA%`, outside this repository. After cloning on another Windows account or computer, run the setup script there and subscribe its devices to the newly printed topic.
+The repository contains the handler, installer, and these setup instructions. Never commit a private ntfy topic or personal config file. The topic and installed handler live under `%APPDATA%`, outside this repository. After cloning on another Windows account or computer, run the setup script there and subscribe its devices to the newly printed topic.
