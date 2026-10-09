@@ -1,0 +1,6 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "gpt-notify",
+  "version": "0.1.2",
+  "description": "Send Codex stop and approval notifications to your devices."
+}

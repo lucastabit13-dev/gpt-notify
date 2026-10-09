@@ -1,0 +1,20 @@
+{
+  "name": "gpt-notify-local",
+  "interface": {
+    "displayName": "Gpt Notify"
+  },
+  "plugins": [
+    {
+      "name": "gpt-notify",
+      "source": {
+        "source": "local",
+        "path": "./plugins/gpt-notify"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

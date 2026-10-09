@@ -1,0 +1,24 @@
+{
+  "name": "codex-gpt-notify",
+  "version": "0.1.1",
+  "description": "Global iPhone and desktop notifications when Codex needs user input.",
+  "type": "commonjs",
+  "bin": {
+    "codex-gpt-notify": "bin/cli.js"
+  },
+  "files": [
+    "README.md",
+    "bin/cli.js",
+    "scripts/setup.ps1",
+    "plugins/gpt-notify/hooks/notify.py"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "os": [
+    "win32"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
